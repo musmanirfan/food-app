@@ -1,18 +1,28 @@
 "use client"
 
-import React, { useState } from 'react'
-import InnerPageBanner from '../components/innerPageBanner'
-import { blogs } from '../components/data'
+import React, { use } from 'react'
 import Image from 'next/image'
-import { CalendarMonth, ChatSharp, Facebook, Instagram, KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight, Pinterest, Star, Twitter, Visibility, YouTube } from '@mui/icons-material'
-import { PiArrowLineUpRight, PiUserCirclePlus } from 'react-icons/pi'
-import Footer from '../components/Footer'
-import CTA2 from '../components/CTA2'
-import InnerPagesHeader from '../components/InnerPagesHeader'
-import Link from 'next/link'
+import { CalendarMonth, ChatSharp, Facebook, FormatQuote, Instagram, KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight, Pinterest, Star, Twitter, Visibility, YouTube } from '@mui/icons-material'
+import { blogs, comments } from '@/app/components/data'
+import InnerPagesHeader from '@/app/components/InnerPagesHeader'
+import InnerPageBanner from '@/app/components/innerPageBanner'
+import CTA2 from '@/app/components/CTA2'
+import Footer from '@/app/components/Footer'
+import { PiArrowBendDoubleUpLeft, PiUserCirclePlus } from 'react-icons/pi'
 
-export default function Blog() {
-    const [isHovered, setIsHovered] = useState(false);
+interface BlogDetailProps {
+    params: Promise<{ slug: string }>;
+}
+
+export default function BlogDetail({ params }: BlogDetailProps) {
+    const resolvedParams = use(params);
+    const { slug } = resolvedParams;
+
+    const blog = blogs.find((_, index) => index.toString() === slug);
+
+    if (!blog) {
+        return <div className="text-center mt-10">Blog not found</div>;
+    }
 
     const recentPost = [
         {
@@ -64,48 +74,129 @@ export default function Blog() {
         },
     ]
 
+
+
     return (
         <>
             <InnerPagesHeader />
-            <InnerPageBanner currentPage={"Blog List"} previousPage={"Blog"} />
+            <InnerPageBanner currentPage={"BLog Details"} previousPage={"Blog details"} />
             <div className='sm:mx-[120px] mx-[10px] flex gap-8'>
                 <div className='w-[100%] sm:w-[70%]'>
-                    {blogs.map(({ image, para3 }, index) => (
-                        <div className='flex flex-col gap-5 mt-20' key={index}>
-                            <div
-                                className="sm:h-[520px] h-[300px] bg-cover bg-center pt-5 pl-5"
-                                style={{ backgroundImage: `url(${image})` }}
-                            >
-                                <div className='w-[60px] h-[60px] flex flex-col justify-center items-center bg-[#FF9F0D] border border-blue-600'>
-                                    <h3 className='text-white'>14</h3>
-                                    <h3 className='text-white'>Feb</h3>
-                                </div>
+                    <div className='flex flex-col gap-10 mt-20'>
+                        <div
+                            className="sm:h-[520px] h-[300px] bg-cover bg-center pt-5 pl-5"
+                            style={{ backgroundImage: `url(${blog.image})` }}
+                        >
+                            <div className='w-[60px] h-[60px] flex flex-col justify-center items-center bg-[#FF9F0D] border border-blue-600'>
+                                <h3 className='text-white'>14</h3>
+                                <h3 className='text-white'>Feb</h3>
                             </div>
-                            <div className='flex items-center gap-2 '>
-
-                                <p><CalendarMonth style={{ color: '#FF9F0D' }} />Feb 14, 2022 /</p>
-
-                                <p><ChatSharp style={{ color: '#FF9F0D' }} /> 3 /</p>
-                                <div className='flex items-center gap-1'>
-                                    <PiUserCirclePlus style={{ color: '#FF9F0D', fontSize: '1.5rem' }} />
-                                    <p className='text-nowrap'> Admin</p>
-                                </div>
-                            </div>
-                            <div>
-                                {para3}
-                            </div>
-                            <Link href={`blogDetail/${index}`}>
-                                <div
-                                    className="flex cursor-pointer items-center gap-3 border transition-all hover:border-[#FF9F0D] border-black whitespace-nowrap py-4 px-7 w-fit"
-                                    onMouseEnter={() => setIsHovered(true)}
-                                    onMouseLeave={() => setIsHovered(false)}
-                                >
-                                    <span style={{ color: isHovered ? '#FF9F0D' : 'black' }}>Read More</span>
-                                    <PiArrowLineUpRight style={{ color: isHovered ? '#FF9F0D' : 'black' }} />
-                                </div>
-                            </Link>
                         </div>
-                    ))}
+                        <div className='flex items-center gap-2 '>
+
+                            <p><CalendarMonth style={{ color: '#FF9F0D' }} />Feb 14, 2022 /</p>
+
+                            <p><ChatSharp style={{ color: '#FF9F0D' }} /> 3 /</p>
+                            <div className='flex items-center gap-1'>
+                                <PiUserCirclePlus style={{ color: '#FF9F0D', fontSize: '1.5rem' }} />
+                                <p className='text-nowrap'> Admin</p>
+                            </div>
+                        </div>
+                        <div>
+                            {blog.para1}
+                        </div>
+                        <div>
+                            {blog.para2}
+                        </div>
+                        <div className='text-white bg-[#FF9F0D] px-4 py-3 flex gap-3'>
+                            <FormatQuote className='' style={{ fontSize: '2rem' }} />
+                            {blog.para3}
+                        </div>
+                        <div className='flex gap-5 sm:flex-row flex-col'>
+                            <div className='sm:w-[50%] w-[100%] flex flex-col gap-6'>
+                                <div>
+                                    {blog.para4}
+                                </div>
+                                <div>
+                                    {blog.para5}
+                                </div>
+                            </div>
+                            <div className='sm:w-[50%] w-[100%] h-[366px]'>
+                                <Image unoptimized className='w-[424px] h-[366px]' src={blog.image} alt='blog' width={50} height={50} />
+                            </div>
+                        </div>
+                        <div>
+                            {blog.para6}
+                        </div>
+                        <div>
+                            {blog.para7}
+                        </div>
+                    </div>
+
+                    <div className='border p-3 border-[#E0E0E0] flex sm:flex-row flex-col mt-5 gap-3 sm:justify-between sm:mt-10'>
+                        <div className='flex items-center gap-2'>
+                            <h1 className='font-bold text-sm'>Tags:</h1>
+                            <p className='text-sm'>{blog.tags}</p>
+                        </div>
+                        <div className='flex items-center gap-2'>
+                            <h1 className='font-bold text-sm'>Share:</h1>
+                            <Facebook className='text-[#4F4F4F]' style={{ fontSize: '1rem' }} />
+                            <Twitter className='text-[#4F4F4F]' style={{ fontSize: '1rem' }} />
+                            <Instagram className='text-[#4F4F4F]' style={{ fontSize: '1rem' }} />
+                            <Pinterest className='text-[#4F4F4F]' style={{ fontSize: '1rem' }} />
+                        </div>
+                    </div>
+
+                    <div className='mt-10'>
+                        <h1 className='text-2xl font-bold'>Comments - 03</h1>
+                        {comments?.length > 0 ? (
+                            comments.map(({ image, name, date, para }, i) => (
+                                <div className={`flex gap-4 mt-7 sm:mt-10 ${i === 1 ? 'sm:pl-12 pl:0' : ''}`} key={i}>
+                                    <div className='w-[12%]'>
+                                        <Image unoptimized className='rounded-full w-[62px] sm:w-[72px] sm:h-[65px] h-[45px]' src={image} alt='man' width={50} height={50} />
+                                    </div>
+                                    <div className='w-[88%] '>
+                                        <div className='flex items-center gap-5'>
+                                            <h1>{name}</h1>
+                                            <h1 className={`text-sm whitespace-nowrap flex items-center gap-1 ${i === 1 ? 'text-[#FF9F0D]' : ''
+                                                }`}>
+                                                <PiArrowBendDoubleUpLeft />
+                                                Reply
+                                            </h1>
+                                        </div>
+                                        <p className='flex items-center text-sm text-[#828282]'><CalendarMonth style={{ color: '#FF9F0D', fontSize: '15px' }} />{date}</p>
+                                        <p className='text-sm text-[#4F4F4F]'>{para}</p>
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            <p>No comments available</p>
+                        )}
+                    </div>
+                    <div className='mt-10'>
+                        <h1 className='text-2xl font-bold'>Post a comment</h1>
+                        <div className="flex gap-4">
+                            <input
+                                type="text"
+                                placeholder="Name*"
+                                className="w-1/2 border h-14 border-gray-300 focus:outline-none px-3 py-2"
+                            />
+                            <input
+                                type="email"
+                                placeholder="Email*"
+                                className="w-1/2 border border-gray-300 focus:outline-none px-3 py-2"
+                            />
+                        </div>
+                        <textarea
+                            name="textarea"
+                            rows={10}
+                            cols={50}
+                            placeholder='Write a comment'
+                            className="border border-gray-300 mt-5 p-2 w-full"
+                        ></textarea>
+                        <button className='w-[212px] h-[56px] transition-all text-white mt-5 bg-[#FF9F0D] hover:bg-white hover:text-black hover:border hover:border-black'>Post a Comment</button>
+
+                    </div>
 
                     <div className='flex gap-3 mx-auto w-fit mt-20'>
                         <div className="border border-[#F2F2F2] h-[48px] w-[48px] flex justify-center items-center hover:bg-[#FF9F0D] group">

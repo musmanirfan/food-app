@@ -65,22 +65,22 @@ export const blogs = [
         tags: "Restaurant, Dinner, Pizza, Yummy",
     }
 ]
-export let comments: [{
-    image: "comment1.jpg",
+export const comments = [{
+    image: "/blogImages/comment1.jpeg",
     name: "MD Sojib Khan",
     date: "June 22, 2020",
     para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc orci tellus, fermentum nec imperdiet sed, pulvinar et sem, Fusce hendrerit faucibus sollicitudin.",
 },
-    {
-        image: "comment2.jpg",
-        name: "MD Moon Khan",
-        date: "June 22, 2020",
-        para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc orci tellus, fermentum nec imperdiet sed, pulvinar et sem, Fusce hendrerit faucibus sollicitudin."
-    }
+{
+    image: "/blogImages/comment2.jpeg",
+    name: "MD Moon Khan",
+    date: "June 22, 2020",
+    para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc orci tellus, fermentum nec imperdiet sed, pulvinar et sem, Fusce hendrerit faucibus sollicitudin."
+}
     ,
-    {
-        image: "comment3.jpg",
-        name: "MD Gulli Khan",
-        date: "June 22, 2020",
-        para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc orci tellus, fermentum nec imperdiet sed, pulvinar et sem, Fusce hendrerit faucibus sollicitudin."
-    }]
+{
+    image: "/blogImages/comment3.jpeg",
+    name: "MD Gulli Khan",
+    date: "June 22, 2020",
+    para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc orci tellus, fermentum nec imperdiet sed, pulvinar et sem, Fusce hendrerit faucibus sollicitudin."
+}]
