@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import InnerPageBanner from '../components/innerPageBanner'
 import { blogs } from '../components/data'
 import Image from 'next/image'
-import { CalendarMonth, ChatSharp, Facebook, Instagram, Pinterest, Star, Twitter, Visibility, YouTube } from '@mui/icons-material'
+import { CalendarMonth, ChatSharp, Facebook, Instagram, KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight, Pinterest, Star, Twitter, Visibility, YouTube } from '@mui/icons-material'
 import { PiArrowLineUpRight, PiUserCirclePlus } from 'react-icons/pi'
 import Footer from '../components/Footer'
 import CTA2 from '../components/CTA2'
@@ -67,13 +67,13 @@ export default function Blog() {
         <>
             <InnerPagesHeader />
             <InnerPageBanner currentPage={"Blog List"} previousPage={"Blog"} />
-            <div className='mx-[120px] flex gap-8'>
-                <div className='w-[70%]'>
+            <div className='sm:mx-[120px] mx-[10px] flex gap-8'>
+                <div className='w-[100%] sm:w-[70%]'>
 
                     {blogs.map(({ image, para3 }, index) => (
                         <div className='flex flex-col gap-5 mt-20' key={index}>
                             <div
-                                className="h-[520px] bg-cover bg-center pt-5 pl-5"
+                                className="sm:h-[520px] h-[300px] bg-cover bg-center pt-5 pl-5"
                                 style={{ backgroundImage: `url(${image})` }}
                             >
                                 <div className='w-[60px] h-[60px] flex flex-col justify-center items-center bg-[#FF9F0D] border border-blue-600'>
@@ -104,8 +104,26 @@ export default function Blog() {
                             </div>
                         </div>
                     ))}
+
+                    <div className='flex gap-3 mx-auto w-fit mt-20'>
+                        <div className="border border-[#F2F2F2] h-[48px] w-[48px] flex justify-center items-center hover:bg-[#FF9F0D] group">
+                            <KeyboardDoubleArrowLeft className="text-[#FF9F0D] group-hover:text-white" />
+                        </div>
+                        <div className="border border-[#F2F2F2] h-[48px] w-[48px] flex justify-center items-center hover:bg-[#FF9F0D] group">
+                            <h1 className="text-[#FF9F0D] group-hover:text-white">1</h1>
+                        </div>
+                        <div className="border border-[#F2F2F2] h-[48px] w-[48px] flex justify-center items-center hover:bg-[#FF9F0D] group">
+                        <h1 className="text-[#FF9F0D] group-hover:text-white">2</h1>
+                        </div>
+                        <div className="border border-[#F2F2F2] h-[48px] w-[48px] flex justify-center items-center hover:bg-[#FF9F0D] group">
+                        <h1 className="text-[#FF9F0D] group-hover:text-white">3</h1>
+                        </div>
+                        <div className="border border-[#F2F2F2] h-[48px] w-[48px] flex justify-center items-center hover:bg-[#FF9F0D] group">
+                            <KeyboardDoubleArrowRight className="text-[#FF9F0D] group-hover:text-white" />
+                        </div>
+                    </div>
                 </div>
-                <div className='w-[30%] my-20'>
+                <div className='sm:block hidden sm:w-[30%] my-20'>
                     <div className="flex items-center border border-gray-300  overflow-hidden w-80">
                         <input
                             type="text"

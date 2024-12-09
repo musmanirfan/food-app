@@ -8,7 +8,7 @@ export default function InnerPageBanner({ currentPage, previousPage }: BannerPro
     return (
         <>
             <div
-                className="h-[45vh] mt-[70px] bg-cover bg-center flex flex-col justify-center items-center gap-3"
+                className="h-[45vh] sm:mt-[70px] mt:50px bg-cover bg-center flex flex-col justify-center items-center gap-3"
                 style={{ backgroundImage: "url('innerPageBanner.jpeg')" }}
             >
                 <h1 className="text-white text-center font-bold text-3xl">{currentPage}</h1>
