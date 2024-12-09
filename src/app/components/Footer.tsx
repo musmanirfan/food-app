@@ -55,7 +55,7 @@ const Footer = () => <>
     </footer>
     <div className='bg-[#4F4F4F] py-7 mt-12 text-white'>
         <div className='md:w-[85vw] w-[90vw] mx-auto md:flex items-center justify-between'>
-            <p className='text-gray-300'>Copyright © 2022 by Ayeman. All Rights Reserved.</p>
+            <p className='text-gray-300'>Copyright © 2024 by Saif. All Rights Reserved.</p>
             <img src="/socialIcons.png" alt="Social Icons" className='mt-5 md:mt-0' />
         </div>
     </div>

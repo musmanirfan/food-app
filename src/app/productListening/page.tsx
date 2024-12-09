@@ -7,6 +7,7 @@ import CTA2 from "../components/CTA2";
 import Footer from "../components/Footer";
 import InnerPagesHeader from "../components/InnerPagesHeader";
 import InnerPageBanner from "../components/innerPageBanner";
+import Link from "next/link";
 
 const ProductListing = () => {
     const products = [
@@ -198,35 +199,38 @@ const ProductListing = () => {
                         {/* Product Grid */}
                         <div className="container mx-auto">
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                                {products.map((product) => (
+                                {products.map((product, index) => (
+
                                     <div
                                         key={product.id}
                                         className="relative border border-gray-200"
                                     >
-                                        {/* Product Image */}
-                                        <img
-                                            src={product.image}
-                                            alt={product.name}
-                                            className="w-full h-56 object-cover"
-                                        />
+                                        <Link href={`shopDetail/${index}`}>
+                                            {/* Product Image */}
+                                            <img
+                                                src={product.image}
+                                                alt={product.name}
+                                                className="w-full h-56 object-cover"
+                                            />
 
-                                        {/* Discount Badge */}
-                                        {product.discount && (
-                                            <span className="absolute top-2 left-2 bg-[#FF9F0D] text-white px-2 py-1 text-xs">
-                                                Sale
-                                            </span>
-                                        )}
+                                            {/* Discount Badge */}
+                                            {product.discount && (
+                                                <span className="absolute top-2 left-2 bg-[#FF9F0D] text-white px-2 py-1 text-xs">
+                                                    Sale
+                                                </span>
+                                            )}
 
-                                        {/* Product Details */}
-                                        <div className="py-2">
-                                            <h3 className="text-lg font-semibold">{product.name}</h3>
-                                            <div className="flex items-center gap-2">
-                                                <p className="text-[#FF9F0D] font-bold">{product.price}</p>
-                                                {product.oldPrice && (
-                                                    <p className="text-gray-400 line-through">{product.oldPrice}</p>
-                                                )}
+                                            {/* Product Details */}
+                                            <div className="py-2">
+                                                <h3 className="text-lg font-semibold">{product.name}</h3>
+                                                <div className="flex items-center gap-2">
+                                                    <p className="text-[#FF9F0D] font-bold">{product.price}</p>
+                                                    {product.oldPrice && (
+                                                        <p className="text-gray-400 line-through">{product.oldPrice}</p>
+                                                    )}
+                                                </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     </div>
                                 ))}
                             </div>
