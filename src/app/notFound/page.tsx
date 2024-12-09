@@ -21,7 +21,7 @@ export default function NotFound() {
           </h2>
           {/* Subtext */}
           <p className="text-gray-500 mt-2">
-            Page Cannot be found! we'll have it figured out in no time.
+           {` Page Cannot be found! we'll have it figured out in no time.`}
             <br />
             Meanwhile, check out these fresh ideas:
           </p>
