@@ -87,10 +87,6 @@ export default function BlogDetail({ params }: BlogDetailProps) {
                             className="sm:h-[520px] h-[300px] bg-cover bg-center pt-5 pl-5"
                             style={{ backgroundImage: `url(${blog.image})` }}
                         >
-                            <div className='w-[60px] h-[60px] flex flex-col justify-center items-center bg-[#FF9F0D] border border-blue-600'>
-                                <h3 className='text-white'>14</h3>
-                                <h3 className='text-white'>Feb</h3>
-                            </div>
                         </div>
                         <div className='flex items-center gap-2 '>
 
