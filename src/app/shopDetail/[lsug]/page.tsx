@@ -51,7 +51,7 @@ const products = [
         discount: true,
     },
 ];
-export default function page() {
+export default function Page() {
 
     const [activeTab, setActiveTab] = useState("description");
     return (

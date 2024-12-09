@@ -171,11 +171,11 @@ const ProductListing = () => {
     return (
         <>
             <InnerPagesHeader />
-            <InnerPageBanner currentPage={"Our Shop"} previousPage={"Blog"} />
-            <div className="container sm:px-[100px] pl-5 py-10">
-                <div className="grid sm:grid-cols-12 grid-cols-10 gap-8">
+            <InnerPageBanner currentPage={"Our Shop"} previousPage={"Home"} />
+            <div className="container pl-5 py-10">
+                <div className="grid sm:grid-cols-12 mx-auto grid-cols-10 gap-8">
                     {/* Left Section */}
-                    <div className="col-span-9">
+                    <div className="col-span-7">
                         {/* Sorting and Filter Row */}
                         <div className="flex flex-wrap gap-4 mb-6">
                             <div className="flex items-center gap-2 w-full sm:w-auto">
@@ -257,7 +257,7 @@ const ProductListing = () => {
                     </div>
 
                     {/* Right Section */}
-                    <div className="sm:block hidden col-span-3">
+                    <div className="sm:block hidden col-span-5">
                         {/* Search Box */}
                         <div className="flex items-center border border-gray-300  overflow-hidden w-80">
                             <input
@@ -292,8 +292,8 @@ const ProductListing = () => {
                         {/* Filter by Price */}
                         <div className="mb-6 mt-10">
                             <h3 className="font-semibold mb-4">Filter by Price</h3>
-                            <input type="range" className="w-full" />
-                            <div className="flex justify-between text-sm">
+                            <input type="range" className="w-[70%]" />
+                            <div className="flex justify-between w-[70%] text-sm">
                                 <span>From $0 to $8000</span>
                                 <span>Filter</span>
                             </div>
@@ -316,7 +316,7 @@ const ProductListing = () => {
                         </div>
 
                         {/* Product Tags */}
-                        <div className="mt-10">
+                        <div className="mt-10 w-[70%]">
                             <h3 className="font-semibold mb-4">Product Tags</h3>
                             <div className="flex flex-wrap gap-2">
                                 <button className="px-3 py-1 border-b hover:text-[#FF9F0D] border-b-gray-300 rounded">
