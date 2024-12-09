@@ -19,3 +19,47 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* Embla Carousel Css */
+.embla {
+  max-width: 600px;
+  margin: 10px auto 0 auto;
+  position: relative;
+}
+.embla__viewport {
+  overflow-x: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.embla__dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.embla__dot {
+  background: #563a0e; /* Inactive dot color */
+  border: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.embla__dot--active {
+  background: #ff9f0d; /* Active dot color */
+}
+
+.embla__dot:hover,
+.embla__dot:focus {
+  background: #aaa;
+}
