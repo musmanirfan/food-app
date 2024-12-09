@@ -22,7 +22,7 @@ const SignUp = () => {
                             <input
                                 type="text"
                                 placeholder="Name"
-                                className="w-full pl-10 pr-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                className="w-full pl-10 pr-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF9F0D] focus:border-transparent"
                             />
                         </div>
 
@@ -32,7 +32,7 @@ const SignUp = () => {
                             <input
                                 type="email"
                                 placeholder="Email"
-                                className="w-full pl-10 pr-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                className="w-full pl-10 pr-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF9F0D] focus:border-transparent"
                             />
                         </div>
 
@@ -42,7 +42,7 @@ const SignUp = () => {
                             <input
                                 type="password"
                                 placeholder="Password"
-                                className="w-full pl-10 pr-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                                className="w-full pl-10 pr-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF9F0D] focus:border-transparent"
                             />
                         </div>
 
@@ -51,7 +51,7 @@ const SignUp = () => {
                             <input
                                 type="checkbox"
                                 id="remember"
-                                className="w-4 h-4 text-orange-500 bg-gray-200 border-gray-300 rounded focus:ring-orange-500 checked:bg-orange-500"
+                                className="w-4 h-4 text-[#FF9F0D] bg-gray-200 border-gray-300 rounded focus:ring-[#FF9F0D] checked:bg-[#FF9F0D]"
                             />
                             <label htmlFor="remember" className="ml-2 text-gray-600">
                                 Remember me?
@@ -61,7 +61,7 @@ const SignUp = () => {
                         {/* Sign Up Button */}
                         <button
                             type="submit"
-                            className="w-full py-2 bg-orange-500 text-white hover:bg-orange-600 transition focus:outline-none focus:ring-2 focus:ring-orange-500"
+                            className="w-full py-2 bg-[#FF9F0D] text-white hover:bg-orange-600 transition focus:outline-none focus:ring-2 focus:ring-[#FF9F0D]"
                         >
                             Sign Up
                         </button>

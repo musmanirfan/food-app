@@ -1,7 +1,7 @@
 import React from 'react'
 
 const CTA2 = () => (
-  <section className='grid md:grid-cols-2 items-start md:w-[80vw] w-[90vw] mx-auto mt-40 pb-10 border-b border-b-[#FF9F0D] pt-16 md:gap-0 gap-7'>
+  <section className='grid md:grid-cols-2 items-start md:w-[80vw] w-[90vw] mx-auto mt-20 pb-10 border-b border-b-[#FF9F0D] pt-16 md:gap-0 gap-7'>
 
     <div className='text-white'>
       <h3 className='text-3xl font-semibold'><span className='text-[#FF9F0D]'>Still</span> You Need Our Support ?</h3>
