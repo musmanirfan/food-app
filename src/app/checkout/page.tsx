@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowBack, ArrowBackIos, ArrowForward, ArrowForwardIos } from "@mui/icons-material";
+import { ArrowBackIos, ArrowForward, ArrowForwardIos } from "@mui/icons-material";
 import CTA2 from "../components/CTA2";
 import Footer from "../components/Footer";
 import InnerPagesHeader from "../components/InnerPagesHeader";
