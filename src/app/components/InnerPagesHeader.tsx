@@ -20,7 +20,7 @@ const navLinks = [
             { name: "404 Error", link: "notFound" },
             { name: "Our Chefs", link: "ourChefs" },
             { name: "Shop Detail", link: "shopDetail/0" },
-            { name: "Shipping Cart", link: "shippingCart" },
+            { name: "Shipping Cart", link: "shoppingCart" },
             { name: "Blog Detail", link: "blogDetail/0" },
             { name: "FAQ", link: "faq" },
         ],
