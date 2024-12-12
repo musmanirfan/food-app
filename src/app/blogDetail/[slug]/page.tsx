@@ -79,7 +79,7 @@ export default function BlogDetail({ params }: BlogDetailProps) {
     return (
         <>
             <InnerPagesHeader />
-            <InnerPageBanner currentPage={"BLog Details"} previousPage={"Blog details"} />
+            <InnerPageBanner currentPage={"BLog Details"} previousPage={"Home"} />
             <div className='sm:mx-[120px] mx-[10px] flex gap-8'>
                 <div className='w-[100%] sm:w-[70%]'>
                     <div className='flex flex-col gap-10 mt-20'>

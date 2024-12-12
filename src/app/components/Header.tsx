@@ -21,7 +21,7 @@ const navLinks = [
       { name: "FAQ", link: "faq" },
     ],
   },
-  { name: "About", link: "/About" },
+  { name: "About", link: "/about" },
   { name: "Shop", link: "/productListening" },
   { name: "Contact", link: "/contact" },
 ];

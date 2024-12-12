@@ -1,18 +1,344 @@
-import React from 'react'
+"use client"
+
+import React, { useCallback, useEffect, useState } from 'react'
 import InnerPagesHeader from '../components/InnerPagesHeader'
 import InnerPageBanner from '../components/innerPageBanner'
 import CTA2 from '../components/CTA2'
 import Footer from '../components/Footer'
+import { Coffee, Facebook, Pinterest, PlayArrow, School, Twitter, YouTube } from '@mui/icons-material'
+import DirectionsWalkIcon from '@mui/icons-material/DirectionsWalk';
+import useEmblaCarousel from 'embla-carousel-react'
+
+const chefs = [
+    {
+        name: "Tahmina Rumi",
+        role: "Chef",
+        image: "/images/chef1.jpeg",
+    },
+    {
+        name: "Jorina Begum",
+        role: "Chef",
+        image: "/images/chef2.jpeg",
+    },
+    {
+        name: "M. Mohammad",
+        role: "Chef",
+        image: "/images/chef3.jpeg",
+    },
+    {
+        name: "Munna Kathy",
+        role: "Chef",
+        image: "/images/chef4.jpeg",
+    },
+]
 
 export default function page() {
+
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [activeTab, setActiveTab] = useState<keyof typeof menuData>("Breakfast");
+
+    const [emblaRef, embla] = useEmblaCarousel({ loop: false }); // Move this above the useEffect
+
+    const menuData: Record<string, string[]> = {
+        Breakfast: [
+            "Alder Grilled Chinook Salmon",
+            "Glow Cheese",
+            "Fresh Breakfast",
+            "Italian Pizza",
+            "Mild Butter",
+            "Slice Beef",
+            "Fresh Bread",
+            "Mushroom Pizza",
+            "Extra Item 1",
+            "Extra Item 2",
+        ],
+        Lunch: [
+            "Fresh Breakfast",
+            "Italian Pizza",
+            "Mild Butter",
+            "Slice Beef",
+            "Fresh Bread",
+            "Mushroom Pizza",
+            "Extra Lunch Item 1",
+            "Extra Lunch Item 2",
+            "Extra Lunch Item 3",
+        ],
+        Dinner: [
+            "Mild Butter",
+            "Slice Beef",
+            "Fresh Bread",
+            "Mushroom Pizza",
+            "Grilled Chicken",
+            "Steak",
+            "Pasta",
+            "Garlic Bread",
+            "Salmon Dinner",
+        ],
+        Dessert: [
+            "Ice Cream",
+            "Brownie",
+            "Cheesecake",
+            "Pudding",
+            "Mousse",
+            "Fruit Salad",
+            "Cupcake",
+            "Tart",
+            "Macaron",
+        ],
+        Drink: [
+            "Fresh Orange Juice",
+            "Cold Coffee",
+            "Mojito",
+            "Milkshake",
+            "Soda",
+            "Iced Tea",
+            "Hot Chocolate",
+            "Smoothie",
+        ],
+        Snack: [
+            "Nachos",
+            "Veggie Sandwich",
+            "Fries",
+            "Popcorn",
+            "Cheese Balls",
+            "Chicken Wings",
+            "Spring Rolls",
+            "Chips",
+        ],
+    };
+
+
+    useEffect(() => {
+        if (!embla) return;
+
+        const onSelect = () => {
+            const index = embla.selectedScrollSnap();
+            console.log("Selected Snap Index:", index); // Debug log
+            setSelectedIndex(index);
+        };
+
+        embla.on("select", onSelect);
+        onSelect();
+
+        return () => {
+            console.log("Cleaning up listener"); // Debug log
+            embla.off("select", onSelect);
+        };
+    }, [embla]);
+
+    const scrollTo = useCallback(
+        (index: number) => {
+            if (!embla) {
+                console.warn("Embla is not initialized"); // Debug log
+                return;
+            }
+            embla.scrollTo(index);
+        },
+        [embla]
+    );
     return (
-        <>
+        <div className='bg-[#f5f5f5]'>
             <InnerPagesHeader />
             <InnerPageBanner currentPage={'About'} previousPage={'Home'} />
+            {/* top section */}
+            <div className='justify-center mt-[100px] flex gap-32 items-center'>
+                <div className='flex gap-3'>
+                    <div>
+                        <div className='w-48 !h-[300px] bg-cover' style={{ backgroundImage: "url('/images/about1.jpeg')" }}></div>
+                    </div>
+                    <div className='flex flex-col gap-3 mt-7'>
+                        <div className='w-40 !h-40 bg-cover bg-center' style={{ backgroundImage: "url('/images/about2.jpeg')" }}></div>
+                        <div className='w-40 !h-52 bg-cover bg-center' style={{ backgroundImage: "url('/images/about3.jpeg')" }}></div>
+                    </div>
+                </div>
+                <div className='w-[40%]'>
+                    <img className='w-fit' src="/about-us.png" alt="about-us" />
+                    <h1 className="text-2xl md:text-4xl font-semibold -mt-1">Food is an important
+                        part Of a balanced Diet</h1>
+                    <p className='mt-3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.</p>
+                    <div className='sm:mt-4 flex items-center gap-3'>
+                        <button className="bg-[#e88d0a] text-white flex gap-2 w-fit items-center px-6 py-3 sm:w-fit hover:bg-[#e88d0a] hover:shadow-lg transition duration-300">
+                            Add to cart
+                        </button>
+                        <button className="bg-[#e88d0a] text-white flex gap-2 w-fit items-center px-3 py-3 rounded-full sm:w-fit hover:bg-[#e88d0a] hover:shadow-lg transition duration-300">
+                            <PlayArrow />
+                        </button>
+                        <h2 className='font-bold text-lg'>Watch video </h2>
+                    </div>
+                </div>
+            </div >
+
+
+            {/* why choose us section */}
+            <div className='mt-[120px] mx-[120px]'>
+                <div>
+                    <h1 className="text-2xl md:text-4xl font-semibold text-center">Why Choose us</h1>
+                    <p className='text-center sm:w-[50%] mx-auto'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. </p>
+                    <div className='w-[97%] mx-auto h-[300px] mt-10 bg-cover bg-center bg-no-repeat' style={{ backgroundImage: "url('/images/about-banner.jpeg')" }}></div>
+                    <div className='flex gap-10 mt-10'>
+                        <div className='flex flex-col items-center gap-2'>
+                            <School />
+                            <h2 className='font-bold'>Best Chef</h2>
+                            <p className='text-center text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat </p>
+                        </div>
+                        <div className='flex flex-col items-center gap-2'>
+                            <Coffee />
+                            <h2 className='font-bold'>120 Item food</h2>
+                            <p className='text-center text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat </p>
+                        </div>
+                        <div className='flex flex-col items-center gap-2'>
+                            <DirectionsWalkIcon />
+                            <h2 className='font-bold'>Clean Environment</h2>
+                            <p className='text-center text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+            </div>
+
+            {/* Team Member */}
+            <div>
+                <div style={{ backgroundImage: "url('/team-bg.jpeg')" }} className='bg-cover  bg-center mb-[250px] mt-[120px]'>
+                    <div className='bg-[#FF9F0DD9] px-[140px] pt-[80px] relative h-[350px]'>
+                        <div>
+                            <h1 className="text-2xl md:text-4xl font-semibold text-white text-center">Team Member</h1>
+                            <p className='text-center text-white sm:w-[50%] mx-auto'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed pharetra dictum neque massa congue </p>
+
+                        </div>
+                        <div className='flex justify-center gap-5 absolute -bottom-48 left-[50%] right-[50%] w-[100%] -translate-x-[50%]'>
+                            {chefs.map((chef, index) => (
+                                <div
+                                    key={index}
+                                    className="flex flex-col py-5 items-center text-center shadow-md group relative"
+                                >
+                                    {/* Chef Image with Background */}
+                                    <div
+                                        className="w-[230px] h-[230px] bg-cover relative"
+                                        style={{ backgroundImage: `url(${chef.image})` }}
+                                    >
+                                        {/* Social Icons */}
+                                        <div className="absolute right-2 top-2 flex flex-col items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                            <a
+                                                href="#"
+                                                className="w-7 h-7 bg-[#e88d0a] text-white flex items-center justify-center shadow-md hover:bg-[#ffae3e]"
+                                            >
+                                                <Facebook fontSize="small" />
+                                            </a>
+                                            <a
+                                                href="#"
+                                                className="w-7 h-7 bg-[#e88d0a] text-white flex items-center justify-center shadow-md hover:bg-[#ffae3e]"
+                                            >
+                                                <Twitter fontSize="small" />
+                                            </a>
+                                            <a
+                                                href="#"
+                                                className="w-7 h-7 bg-[#e88d0a] text-white flex items-center justify-center shadow-md hover:bg-[#ffae3e]"
+                                            >
+                                                <YouTube fontSize="small" />
+                                            </a>
+                                            <a
+                                                href="#"
+                                                className="w-7 h-7 bg-[#e88d0a] text-white flex items-center justify-center shadow-md hover:bg-[#ffae3e]"
+                                            >
+                                                <Pinterest fontSize="small" />
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    {/* Chef Name */}
+                                    <h3 className="text-lg font-semibold mt-4">{chef.name}</h3>
+                                    <p className="text-sm text-gray-600">{chef.role}</p>
+                                </div>
+
+                            ))}
+                        </div>
+                    </div>
+
+                </div>
+            </div >
+
+            {/* testimonial section */}
+            <section className='md:w-[77vw] w-[90vw] mx-auto mt-80'>
+                <img src="/testimonials.png" alt="testimonials" />
+                <h1 className='text-4xl font-semibold text-black mt-2'>What our client are saying</h1>
+                <div className="embla">
+                    <div className="embla__viewport" ref={emblaRef}>
+                        <div className="embla__container">
+                            {Array.from({ length: 3 }).map((_, i) => (
+                                <div key={i} className="embla__slide pt-20 cursor-grab h-fit w-fit">
+                                    <div className="bg-white shadow-lg relative pb-5 px-12 w-full">
+                                        <img
+                                            src="/alamin.png"
+                                            alt={`Slide Image ${i + 1}`}
+                                            className="absolute left-[50%] right-[50%] -translate-x-[50%] !z-50 h-24 w-24 -top-14 rounded-full"
+                                        />
+                                        <img src="/quote.png" alt="Quotes Sign" className="mt-14 mx-auto" />
+                                        <p className="font-light text-gray-600 text-sm text-center mt-4">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.
+                                        </p>
+                                        <img src="/stars.png" alt="Rating Stars" className="mx-auto mt-6" />
+                                        <h1 className="text-2xl mt-4 font-semibold text-center">Alamin Hasan</h1>
+                                        <p className="font-thin text-center text-sm text-gray-700">Food Specialist</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="embla__dots">
+                        {Array.from({ length: 3 }).map((_, index) => (
+                            <button
+                                key={index}
+                                className={`embla__dot ${index === selectedIndex ? "embla__dot--active" : ""}`}
+                                onClick={() => scrollTo(index)}
+                                aria-label={`Go to slide ${index + 1}`} // Accessibility improvement
+                            />
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Our Food Menu */}
+            <section className='md:w-full px-[140px] w-[90vw] mx-auto mt-40'>
+                <div className='flex flex-col items-center'>
+                    <h1 className='text-4xl font-semibold text-black mt-2'>Our Food Menu</h1>
+                    <p className='text-center sm:w-[40%] mt-5 mx-auto'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed pharetra dictum neque massa congue </p>
+                </div>
+
+                <ul className='flex flex-wrap md:gap-8 gap-x-5 gap-y-2 mt-12 !justify-center text-xl text-black'>
+                    {Object.keys(menuData).map((tab) => (
+                        <li
+                            key={tab}
+                            className={`cursor-pointer ${activeTab === tab ? "text-[#e88d0a] font-semibold underline" : ""}`}
+                            onClick={() => setActiveTab(tab)}
+                        >
+                            {tab}
+                        </li>
+                    ))}
+                </ul>
+
+                <div className='grid md:grid-cols-2 gap-5 mt-14'>
+                    <div className='col-span-2 text-black grid md:grid-cols-2 gap-x-5 gap-y-3'>
+                        {menuData[activeTab as keyof typeof menuData]
+                            .slice(0, 8)
+                            .map((name, i) => (
+                                <div className="flex items-start justify-between border-b border-b-gray-300 pb-3" key={i}>
+                                    <div className="space-y-1">
+                                        <h5 className="text-xl font-medium">{name}</h5>
+                                        <p className="text-xs">Toasted French bread topped with romano, cheddar</p>
+                                        <p className="text-xs">560 CAL</p>
+                                    </div>
+                                    <h5 className="text-[#e88d0a] font-bold">12.5$</h5>
+                                </div>
+                            ))}
+                    </div>
+                </div>
+            </section>
             <div className='bg-[#0D0D0D]'>
                 <CTA2 />
                 <Footer />
             </div>
-        </>
+        </div>
     )
 }

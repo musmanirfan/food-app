@@ -73,7 +73,7 @@ const InnerPagesHeader = () => {
                                     ) : (
                                         <>
                                             <span className="flex items-center gap-1 cursor-pointer">
-                                                {navItem.name}{" "}
+                                                {navItem.name}{""}
                                                 <KeyboardArrowDown />
                                             </span>
                                             <ul className="hidden group-hover:block absolute top-full left-0 bg-white text-black rounded-lg p-3 shadow-md">
