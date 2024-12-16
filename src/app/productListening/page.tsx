@@ -304,7 +304,7 @@ const ProductListing = () => {
                             <h3 className="font-semibold my-4">Latest Products</h3>
                             {latestProducts.map(({ id, image, name }, i) => (
                                 <div key={id + i} className='flex gap-3 w-full py-3 '>
-                                    <Image className='rounded-md h-[70px] sm:w-[30%] !w-[90%]' unoptimized src={image} alt='recent' width={70} height={35} />
+                                    <Image className='rounded-md h-[70px] sm:w-[30%]' unoptimized src={image} alt='recent' width={70} height={35} />
                                     <div className='w-[70%] flex flex-col justify-center'>
                                         <p className='text-sm font-bold mb-2'>{name}</p>
                                         <p className='text-sm'><Star style={{ color: "#FF9F0D", fontSize: '16px' }} /><Star style={{ color: "#FF9F0D", fontSize: '16px' }} /><Star style={{ color: "#FF9F0D", fontSize: '16px' }} /><Star style={{ color: "#E0E0E0", fontSize: '16px' }} /><Star style={{ color: "#E0E0E0", fontSize: '16px' }} /></p>
