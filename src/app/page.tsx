@@ -11,6 +11,8 @@ import Blogs from "./components/Blogs";
 import CTA2 from "./components/CTA2";
 import Footer from "./components/Footer";
 import HomeCategory from "./components/homeCategory";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
   return (

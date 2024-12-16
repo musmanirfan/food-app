@@ -5,9 +5,10 @@ import InnerPagesHeader from '../components/InnerPagesHeader'
 import InnerPageBanner from '../components/innerPageBanner'
 import CTA2 from '../components/CTA2'
 import Footer from '../components/Footer'
-import { Coffee, Facebook, Pinterest, PlayArrow, School, Twitter, YouTube } from '@mui/icons-material'
+import { Coffee,/*  Facebook, Pinterest, */ PlayArrow, School, /* Twitter, YouTube */ } from '@mui/icons-material'
 import DirectionsWalkIcon from '@mui/icons-material/DirectionsWalk';
 import useEmblaCarousel from 'embla-carousel-react'
+import ChefCarousel from '../components/chefCarousel'
 
 const chefs = [
     {
@@ -15,6 +16,7 @@ const chefs = [
         role: "Chef",
         image: "/images/chef1.jpeg",
     },
+    
     {
         name: "Jorina Begum",
         role: "Chef",
@@ -26,18 +28,24 @@ const chefs = [
         image: "/images/chef3.jpeg",
     },
     {
+        name: "Tahmina Rumi",
+        role: "Chef",
+        image: "/images/chef1.jpeg",
+    },
+    {
         name: "Munna Kathy",
         role: "Chef",
         image: "/images/chef4.jpeg",
     },
+    
 ]
 
-export default function page() {
+export default function Page() {
 
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [activeTab, setActiveTab] = useState<keyof typeof menuData>("Breakfast");
-
     const [emblaRef, embla] = useEmblaCarousel({ loop: false }); // Move this above the useEffect
+
 
     const menuData: Record<string, string[]> = {
         Breakfast: [
@@ -108,6 +116,8 @@ export default function page() {
     };
 
 
+
+
     useEffect(() => {
         if (!embla) return;
 
@@ -141,41 +151,41 @@ export default function page() {
             <InnerPagesHeader />
             <InnerPageBanner currentPage={'About'} previousPage={'Home'} />
             {/* top section */}
-            <div className='justify-center mt-[100px] flex gap-32 items-center'>
-                <div className='flex gap-3'>
+            <div className='justify-center sm:mt-[100px] flex sm:gap-32 gap-10 sm:flex-row flex-col items-center'>
+                <div className='flex gap-3 mt-10 sm:mt-0'>
                     <div>
                         <div className='w-48 !h-[300px] bg-cover' style={{ backgroundImage: "url('/images/about1.jpeg')" }}></div>
                     </div>
-                    <div className='flex flex-col gap-3 mt-7'>
+                    <div className='flex flex-col gap-3 sm:mt-7 mt-0'>
                         <div className='w-40 !h-40 bg-cover bg-center' style={{ backgroundImage: "url('/images/about2.jpeg')" }}></div>
                         <div className='w-40 !h-52 bg-cover bg-center' style={{ backgroundImage: "url('/images/about3.jpeg')" }}></div>
                     </div>
                 </div>
-                <div className='w-[40%]'>
+                <div className='sm:w-[40%] w-[90%]'>
                     <img className='w-fit' src="/about-us.png" alt="about-us" />
                     <h1 className="text-2xl md:text-4xl font-semibold -mt-1">Food is an important
                         part Of a balanced Diet</h1>
                     <p className='mt-3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.</p>
-                    <div className='sm:mt-4 flex items-center gap-3'>
-                        <button className="bg-[#e88d0a] text-white flex gap-2 w-fit items-center px-6 py-3 sm:w-fit hover:bg-[#e88d0a] hover:shadow-lg transition duration-300">
+                    <div className='mt-4 flex items-center gap-3'>
+                        <button className="bg-[#e88d0a] text-white flex gap-2 w-fit items-center px-6 sm:py-3 py-2 sm:w-fit hover:bg-[#e88d0a] hover:shadow-lg transition duration-300">
                             Add to cart
                         </button>
-                        <button className="bg-[#e88d0a] text-white flex gap-2 w-fit items-center px-3 py-3 rounded-full sm:w-fit hover:bg-[#e88d0a] hover:shadow-lg transition duration-300">
+                        <button className="bg-[#e88d0a] text-white flex gap-2 w-fit items-center px-2 sm:px-3 sm:py-3 py-2 rounded-full sm:w-fit hover:bg-[#e88d0a] hover:shadow-lg transition duration-300">
                             <PlayArrow />
                         </button>
                         <h2 className='font-bold text-lg'>Watch video </h2>
                     </div>
                 </div>
-            </div >
+            </div>
 
 
             {/* why choose us section */}
-            <div className='mt-[120px] mx-[120px]'>
+            <div className='sm:mt-[120px] mt-[50px] sm:mx-[120px] mx-[15px]'>
                 <div>
                     <h1 className="text-2xl md:text-4xl font-semibold text-center">Why Choose us</h1>
                     <p className='text-center sm:w-[50%] mx-auto'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. </p>
-                    <div className='w-[97%] mx-auto h-[300px] mt-10 bg-cover bg-center bg-no-repeat' style={{ backgroundImage: "url('/images/about-banner.jpeg')" }}></div>
-                    <div className='flex gap-10 mt-10'>
+                    <div className='w-[97%] mx-auto h-[300px] sm:mt-10 mt-2 bg-cover bg-center bg-no-repeat' style={{ backgroundImage: "url('/images/about-banner.jpeg')" }}></div>
+                    <div className='flex gap-10 sm:mt-10 mt-5 px-10 sm:px-0 flex-col sm:flex-row'>
                         <div className='flex flex-col items-center gap-2'>
                             <School />
                             <h2 className='font-bold'>Best Chef</h2>
@@ -201,63 +211,17 @@ export default function page() {
             {/* Team Member */}
             <div>
                 <div style={{ backgroundImage: "url('/team-bg.jpeg')" }} className='bg-cover  bg-center mb-[250px] mt-[120px]'>
-                    <div className='bg-[#FF9F0DD9] px-[140px] pt-[80px] relative h-[350px]'>
+                    <div className='bg-[#FF9F0DD9] sm:px-[140px] px-[20px] pt-[80px] relative h-[350px]'>
                         <div>
                             <h1 className="text-2xl md:text-4xl font-semibold text-white text-center">Team Member</h1>
                             <p className='text-center text-white sm:w-[50%] mx-auto'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed pharetra dictum neque massa congue </p>
 
                         </div>
-                        <div className='flex justify-center gap-5 absolute -bottom-48 left-[50%] right-[50%] w-[100%] -translate-x-[50%]'>
-                            {chefs.map((chef, index) => (
-                                <div
-                                    key={index}
-                                    className="flex flex-col py-5 items-center text-center shadow-md group relative"
-                                >
-                                    {/* Chef Image with Background */}
-                                    <div
-                                        className="w-[230px] h-[230px] bg-cover relative"
-                                        style={{ backgroundImage: `url(${chef.image})` }}
-                                    >
-                                        {/* Social Icons */}
-                                        <div className="absolute right-2 top-2 flex flex-col items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                            <a
-                                                href="#"
-                                                className="w-7 h-7 bg-[#e88d0a] text-white flex items-center justify-center shadow-md hover:bg-[#ffae3e]"
-                                            >
-                                                <Facebook fontSize="small" />
-                                            </a>
-                                            <a
-                                                href="#"
-                                                className="w-7 h-7 bg-[#e88d0a] text-white flex items-center justify-center shadow-md hover:bg-[#ffae3e]"
-                                            >
-                                                <Twitter fontSize="small" />
-                                            </a>
-                                            <a
-                                                href="#"
-                                                className="w-7 h-7 bg-[#e88d0a] text-white flex items-center justify-center shadow-md hover:bg-[#ffae3e]"
-                                            >
-                                                <YouTube fontSize="small" />
-                                            </a>
-                                            <a
-                                                href="#"
-                                                className="w-7 h-7 bg-[#e88d0a] text-white flex items-center justify-center shadow-md hover:bg-[#ffae3e]"
-                                            >
-                                                <Pinterest fontSize="small" />
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    {/* Chef Name */}
-                                    <h3 className="text-lg font-semibold mt-4">{chef.name}</h3>
-                                    <p className="text-sm text-gray-600">{chef.role}</p>
-                                </div>
-
-                            ))}
-                        </div>
+                        <ChefCarousel chefs={chefs} />
                     </div>
 
                 </div>
-            </div >
+            </div>
 
             {/* testimonial section */}
             <section className='md:w-[77vw] w-[90vw] mx-auto mt-80'>
@@ -300,10 +264,10 @@ export default function page() {
             </section>
 
             {/* Our Food Menu */}
-            <section className='md:w-full px-[140px] w-[90vw] mx-auto mt-40'>
+            <section className='md:w-full sm:px-[140px] w-[90vw] flex flex-col mx-auto sm:mt-40 mt-20'>
                 <div className='flex flex-col items-center'>
                     <h1 className='text-4xl font-semibold text-black mt-2'>Our Food Menu</h1>
-                    <p className='text-center sm:w-[40%] mt-5 mx-auto'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed pharetra dictum neque massa congue </p>
+                    <p className='text-center sm:w-[40%] w-[100%] mt-5 mx-auto'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius sed pharetra dictum neque massa congue </p>
                 </div>
 
                 <ul className='flex flex-wrap md:gap-8 gap-x-5 gap-y-2 mt-12 !justify-center text-xl text-black'>
@@ -334,6 +298,7 @@ export default function page() {
                             ))}
                     </div>
                 </div>
+                <button className='w-[180px] h-[56px] transition-all mt-20 !mx-auto border text-[#FF9F0D] border-[#FF9F0D] hover:text-white hover:bg-[#FF9F0D]'>View Menu</button>
             </section>
             <div className='bg-[#0D0D0D]'>
                 <CTA2 />

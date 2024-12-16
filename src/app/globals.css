@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -45,7 +46,7 @@ body {
   margin-top: 30px;
 }
 .embla__dot {
-  background: #563a0e; /* Inactive dot color */
+  background: #563a0e; 
   border: none;
   width: 10px;
   height: 10px;
@@ -56,10 +57,60 @@ body {
 }
 
 .embla__dot--active {
-  background: #ff9f0d; /* Active dot color */
+  background: #ff9f0d; 
 }
 
 .embla__dot:hover,
 .embla__dot:focus {
   background: #aaa;
 }
+
+
+
+
+/* Embla Carousel CSS */
+.chef-carousel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.chef-carousel__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.chef-carousel__container {
+  display: flex;
+  will-change: transform;
+}
+
+.chef-carousel__slide {
+  flex: 0 0 25%; /* 4 slides visible at a time */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .chef-carousel__slide {
+      flex: 0 0 50%; /* 2 slides visible on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .chef-carousel__slide {
+      flex: 0 0 100%; /* 1 slide visible on mobile */
+  }
+}
+
+
+
+
+
+
+
+
+
