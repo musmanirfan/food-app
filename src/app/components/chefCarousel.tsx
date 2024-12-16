@@ -51,14 +51,18 @@ const ChefCarousel: React.FC<ChefCarouselProps> = ({ chefs }) => {
             <div className="chef-carousel__viewport" ref={emblaRef}>
                 <div className="chef-carousel__container">
                     {chefs.map((chef, index) => (
-                        <div key={index} className="chef-carousel__slide">
+                        <div
+                            key={index}
+                            className="chef-carousel__slide group" // Add 'group' for hover effect
+                        >
                             <div className="shadow-md rounded-md">
                                 {/* Chef Image */}
                                 <div
                                     className="w-[230px] h-[230px] bg-cover relative rounded-t-md"
                                     style={{ backgroundImage: `url(${chef.image})` }}
                                 >
-                                    <div className="absolute top-3 right-3 flex flex-col items-center gap-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                    {/* Move hover effect to parent */}
+                                    <div className="absolute top-3 right-3 flex flex-col items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <a href="#" className="w-7 h-7 bg-[#e88d0a] text-white flex items-center justify-center shadow-md hover:bg-[#ffae3e]">
                                             <Facebook fontSize="small" />
                                         </a>

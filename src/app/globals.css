@@ -107,6 +107,64 @@ body {
 }
 
 
+/* Chefs Section */
+.chefs-section {
+  overflow: hidden;
+}
+
+/* Header */
+.chefs-header img {
+  max-width: 150px;
+}
+
+.chefs-title {
+  text-align: center;
+}
+
+/* Embla Carousel */
+.chefs-carousel {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.chefs-carousel-container {
+  display: flex;
+  gap: 1rem;
+  will-change: transform;
+}
+
+.chefs-slide {
+  flex: 0 0 25%; /* 4 slides on larger screens (laptops/desktops) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chefs-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chefs-slide {
+      flex: 0 0 100%; /* 1 slide on mobile */
+  }
+}
+
+/* Button */
+.chefs-button {
+  transition: background-color 0.3s;
+}
+
+.chefs-button:hover {
+  background-color: #ff9f0d;
+  color: #fff;
+}
+
+
+
 
 
 
