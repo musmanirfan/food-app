@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Footer = () => <>
-    <footer className='md:w-[85vw] w-[90vw] mx-auto mt-40 grid md:grid-cols-4 md:gap-0 gap-11 text-white'>
+    <footer className='md:w-[85vw] w-[90vw] relative mx-auto mt-40 grid md:grid-cols-4 md:gap-0 gap-11 text-white'>
         <div className='space-y-4'>
             <h3 className='text-2xl font-medium'>About Us.</h3>
             <p className='text-gray-200'>Corporate clients and leisure travelers has
@@ -52,6 +52,12 @@ const Footer = () => <>
                 ))}
             </ul>
         </div>
+        {<div
+            style={{
+                backgroundImage: "url('/bg/footer-bg.png')",
+            }}
+            className="w-[200px] hidden sm:block h-[150px] absolute bg-contain bg-no-repeat -bottom-[138px] -right-28 opacity-25 z-0"
+        ></div>}
     </footer>
     <div className='bg-[#4F4F4F] py-7 mt-12 text-white'>
         <div className='md:w-[85vw] w-[90vw] mx-auto md:flex items-center justify-between'>

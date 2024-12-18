@@ -13,7 +13,7 @@ const CTA = () => {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna,
                     </p>
                     <div className='flex items-center gap-5 justify-end mt-7'>
-                        <button className='border-[#FF9F0D] border text-white px-8 font-semibold py-3 rounded-3xl'>Read More</button>
+                        <button className='border-[#FF9F0D] border text-white px-8 font-semibold py-3 rounded-3xl hover:bg-[#FF9F0D] transition-all'>Read More</button>
                         <div className='flex gap-1 items-center'>
                             <img src="/play.png" alt="Play Video" className='h-12 font-semibold' />
                             Play Video

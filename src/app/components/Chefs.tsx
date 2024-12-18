@@ -54,7 +54,7 @@ const ChefCarousel2: React.FC<ChefCarouselProps> = ({ chefs }) => {
     // Duplicate chefs to ensure the loop works
     const duplicatedChefs = [...chefs, ...chefs];
     return (
-        <section className='md:w-[100vw] !overflow-x-hidden px-48 relative w-[90vw] mx-auto mt-40'>
+        <section className='md:w-[100vw] !overflow-x-hidden md:px-48 relative w-[90vw] mx-auto mt-40'>
             <div className='flex flex-col items-center'>
                 <img src="/chef.png" alt="chef" />
                 <h1 className='text-4xl font-semibold text-white mt-2'><span className="text-[#FF9F0D]">Meet</span> Our Chefs</h1>
@@ -86,11 +86,11 @@ const ChefCarousel2: React.FC<ChefCarouselProps> = ({ chefs }) => {
                 style={{
                     backgroundImage: "url('/bg/chef-bg.png')",
                 }}
-                className="w-[280px] h-[320px] absolute bg-contain bg-no-repeat bottom-20 -left-5 z-0"
+                className="w-[280px] hidden sm:block h-[320px] absolute bg-contain bg-no-repeat bottom-20 -left-5 z-0"
             >
                 <div className="absolute inset-0 bg-black opacity-75"></div></div>}
             <div className='flex justify-center mt-14'>
-                <button className='border-[#FF9F0D] border text-white px-10 py-3 rounded-3xl'>See More</button>
+                <button className='border-[#FF9F0D] border text-white px-10 transition-all hover:bg-[#FF9F0D] py-3 rounded-3xl'>See More</button>
             </div>
         </section>
     )

@@ -69,7 +69,7 @@ const Testimonials = () => {
                     style={{
                         backgroundImage: "url('/bg/test-bg.png')",
                     }}
-                    className="w-[280px] h-[350px] bg-contain z-0 opacity-15 bg-no-repeat mx-auto absolute bottom-0 -right-32 mt-10"
+                    className="w-[280px] hidden sm:block h-[350px] bg-contain z-0 opacity-15 bg-no-repeat mx-auto absolute bottom-0 -right-32 mt-10"
                 ><div className="absolute inset-0 bg-transparent opacity-90"></div></div>
 
                 {/* Dots */}
