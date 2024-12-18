@@ -9,36 +9,9 @@ import { Coffee,/*  Facebook, Pinterest, */ PlayArrow, School, /* Twitter, YouTu
 import DirectionsWalkIcon from '@mui/icons-material/DirectionsWalk';
 import useEmblaCarousel from 'embla-carousel-react'
 import ChefCarousel from '../components/chefCarousel'
+import { chefs } from '../components/chef-arrow'
 
-const chefs = [
-    {
-        name: "Tahmina Rumi",
-        role: "Chef",
-        image: "/images/chef1.jpeg",
-    },
-    
-    {
-        name: "Jorina Begum",
-        role: "Chef",
-        image: "/images/chef2.jpeg",
-    },
-    {
-        name: "M. Mohammad",
-        role: "Chef",
-        image: "/images/chef3.jpeg",
-    },
-    {
-        name: "Tahmina Rumi",
-        role: "Chef",
-        image: "/images/chef1.jpeg",
-    },
-    {
-        name: "Munna Kathy",
-        role: "Chef",
-        image: "/images/chef4.jpeg",
-    },
-    
-]
+
 
 export default function Page() {
 

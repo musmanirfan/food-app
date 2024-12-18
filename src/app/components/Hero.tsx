@@ -21,7 +21,7 @@ const Hero = () => (
                             food Quality</h1>
                         <p className="mt-8 text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Varius sed pharetra dictum neque massa congue</p>
-                        <button className="bg-[#FF9F0D] text-white px-12 py-4 rounded-full mt-8">See Menu</button>
+                        <button className="bg-[#FF9F0D] text-white px-12 py-4 rounded-full mt-8 hover:border hover:border-[#FF9F0D] hover:bg-transparent">See Menu</button>
                     </div>
                 </div>
                 <img src='/hero.png' alt='' />

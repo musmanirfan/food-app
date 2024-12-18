@@ -16,7 +16,7 @@ const About = () => (
           </li>
         ))}
       </ul>
-      <button className="bg-[#FF9F0D] text-white px-12 py-4 rounded-full mt-8">Read More</button>
+      <button className="bg-[#FF9F0D] text-white px-12 py-4 rounded-full mt-8 hover:border hover:border-[#FF9F0D] hover:bg-transparent">Read More</button>
     </div>
 
     <div className='grid grid-cols-2 gap-2'>

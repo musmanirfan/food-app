@@ -4,13 +4,14 @@ import Hero from "./components/Hero";
 import WhyChoose from "./components/WhyChoose";
 import Counters from "./components/Counters";
 import Menu from "./components/Menu";
-import Chefs from "./components/Chefs";
 import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
 import Blogs from "./components/Blogs";
 import CTA2 from "./components/CTA2";
 import Footer from "./components/Footer";
 import HomeCategory from "./components/homeCategory";
+import ChefCarousel2 from "./components/Chefs";
+import { chefs } from "./components/chef-arrow";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
@@ -24,7 +25,7 @@ export default function Home() {
       <WhyChoose />
       <Counters />
       <Menu />
-      <Chefs />
+      <ChefCarousel2 chefs={chefs} />
       <Testimonials />
       <CTA />
       <Blogs />
