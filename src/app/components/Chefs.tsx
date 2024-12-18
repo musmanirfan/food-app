@@ -16,6 +16,7 @@ interface ChefCarouselProps {
 
 const ChefCarousel2: React.FC<ChefCarouselProps> = ({ chefs }) => {
     const [emblaRef, emblaApi] = useEmblaCarousel({
+        align: "start",
         loop: true,
         containScroll: "trimSnaps", // Align properly for looping
     });
@@ -81,12 +82,13 @@ const ChefCarousel2: React.FC<ChefCarouselProps> = ({ chefs }) => {
                     </div>
                 </div>
             </div>
-            {/* <div
+            {<div
                 style={{
                     backgroundImage: "url('/bg/chef-bg.png')",
                 }}
-                className="w-[500px] h-[500px] absolute bg-contain bg-no-repeat bottom-0 -left-0 z-0"
-            ></div> */}
+                className="w-[280px] h-[320px] absolute bg-contain bg-no-repeat bottom-20 -left-5 z-0"
+            >
+                <div className="absolute inset-0 bg-black opacity-75"></div></div>}
             <div className='flex justify-center mt-14'>
                 <button className='border-[#FF9F0D] border text-white px-10 py-3 rounded-3xl'>See More</button>
             </div>

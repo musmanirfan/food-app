@@ -13,6 +13,7 @@ interface ChefCarouselProps {
 
 const ChefCarousel: React.FC<ChefCarouselProps> = ({ chefs }) => {
     const [emblaRef, emblaApi] = useEmblaCarousel({
+        align: "start",
         loop: true,
         containScroll: "trimSnaps", // Align properly for looping
     });
