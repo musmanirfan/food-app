@@ -17,7 +17,7 @@ import { chefs } from "./components/chef-arrow";
 
 export default function Home() {
   return (
-    <div className="!bg-[#000]">
+    <div className="!bg-[#000] !overflow-x-hidden">
       <Header />
       <Hero />
       <About />

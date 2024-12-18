@@ -37,11 +37,11 @@ const Testimonials = () => {
         [embla]
     );
     return (
-        <section className='md:w-[85vw] w-[90vw] mx-auto mt-40'>
+        <section className="md:w-[85vw] relative w-[90vw] mx-auto mt-40">
             <img src="/testimonials.png" alt="testimonials" />
-            <h1 className='text-4xl font-semibold text-white mt-2'>What our client are saying</h1>
-            <div className="embla">
-                <div className="embla__viewport" ref={emblaRef}>
+            <h1 className="text-4xl font-semibold text-white mt-2">What our client are saying</h1>
+            <div className="embla relative">
+                <div className="embla__viewport z-50" ref={emblaRef}>
                     <div className="embla__container">
                         {Array.from({ length: 3 }).map((_, i) => (
                             <div key={i} className="embla__slide pt-20 cursor-grab h-fit w-fit">
@@ -49,7 +49,7 @@ const Testimonials = () => {
                                     <img
                                         src="/alamin.png"
                                         alt={`Slide Image ${i + 1}`}
-                                        className="absolute left-[50%] right-[50%] -translate-x-[50%] !z-50 h-24 w-24 -top-14 rounded-full"
+                                        className="absolute left-[50%] right-[50%] -translate-x-[50%] !z-40 h-24 w-24 -top-14 rounded-full"
                                     />
                                     <img src="/quote.png" alt="Quotes Sign" className="mt-14 mx-auto" />
                                     <p className="font-light text-gray-600 text-sm text-center mt-4">
@@ -63,6 +63,16 @@ const Testimonials = () => {
                         ))}
                     </div>
                 </div>
+
+                {/* Move test-bg div here, after embla content */}
+                <div
+                    style={{
+                        backgroundImage: "url('/bg/test-bg.png')",
+                    }}
+                    className="w-[280px] h-[350px] bg-contain z-0 opacity-15 bg-no-repeat mx-auto absolute bottom-0 -right-32 mt-10"
+                ><div className="absolute inset-0 bg-transparent opacity-90"></div></div>
+
+                {/* Dots */}
                 <div className="embla__dots">
                     {Array.from({ length: 3 }).map((_, index) => (
                         <button
