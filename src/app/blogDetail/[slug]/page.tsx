@@ -3,12 +3,12 @@
 import React, { use } from 'react'
 import Image from 'next/image'
 import { CalendarMonth, ChatSharp, Facebook, FormatQuote, Instagram, KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight, Pinterest, Star, Twitter, Visibility, YouTube } from '@mui/icons-material'
-import { blogs, comments } from '@/app/components/data'
-import InnerPagesHeader from '@/app/components/InnerPagesHeader'
-import InnerPageBanner from '@/app/components/innerPageBanner'
-import CTA2 from '@/app/components/CTA2'
-import Footer from '@/app/components/Footer'
 import { PiArrowBendDoubleUpLeft, PiUserCirclePlus } from 'react-icons/pi'
+import Footer from '../../components/Footer'
+import CTA2 from '../../components/CTA2';
+import InnerPageBanner from '../../components/innerPageBanner';
+import InnerPagesHeader from '../../components/InnerPagesHeader';
+import { blogs, comments } from '../../components/data'
 
 interface BlogDetailProps {
     params: Promise<{ slug: string }>;
