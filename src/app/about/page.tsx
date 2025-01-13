@@ -120,7 +120,7 @@ export default function Page() {
         [embla]
     );
     return (
-        <div className='bg-[#f5f5f5]'>
+        <div className='bg-[#f5f5f5] overflow-x-hidden'>
             <InnerPagesHeader />
             <InnerPageBanner currentPage={'About'} previousPage={'Home'} />
             {/* top section */}
