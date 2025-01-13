@@ -1,9 +1,9 @@
 "use client"
 
-import CTA2 from '@/app/components/CTA2'
-import Footer from '@/app/components/Footer'
-import InnerPageBanner from '@/app/components/innerPageBanner'
-import InnerPagesHeader from '@/app/components/InnerPagesHeader'
+import CTA2 from '../../components/CTA2'
+import Footer from '../../components/Footer'
+import InnerPageBanner from '../../components/innerPageBanner'
+import InnerPagesHeader from '../../components/InnerPagesHeader'
 import { ArrowBack, ArrowForward, FavoriteBorder, Polyline, Redeem, Search, Star } from '@mui/icons-material'
 import Image from 'next/image'
 import React, { useState } from 'react'
