@@ -172,8 +172,8 @@ const ProductListing = () => {
         <>
             <InnerPagesHeader />
             <InnerPageBanner currentPage={"Our Shop"} previousPage={"Home"} />
-            <div className="container sm:pl-5 pl-2 py-10">
-                <div className="grid sm:grid-cols-12 mx-auto grid-cols-8 gap-8">
+            <div className="container sm:pl-28 pl-2 py-10">
+                <div className="grid sm:grid-cols-12 mx-auto grid-cols-8 gap-12">
                     {/* Left Section */}
                     <div className="col-span-7">
                         {/* Sorting and Filter Row */}
@@ -304,7 +304,11 @@ const ProductListing = () => {
                             <h3 className="font-semibold my-4">Latest Products</h3>
                             {latestProducts.map(({ id, image, name }, i) => (
                                 <div key={id + i} className='flex gap-3 w-full py-3 '>
-                                    <Image className='rounded-md h-[70px] sm:w-[30%]' unoptimized src={image} alt='recent' width={70} height={35} />
+                                    <div
+                                        className="bg-cover bg-no-repeat bg-center rounded-md h-[70px] sm:w-[30%]"
+                                        style={{ backgroundImage: `url(${image})` }}
+                                    >
+                                    </div>
                                     <div className='w-[70%] flex flex-col justify-center'>
                                         <p className='text-sm font-bold mb-2'>{name}</p>
                                         <p className='text-sm'><Star style={{ color: "#FF9F0D", fontSize: '16px' }} /><Star style={{ color: "#FF9F0D", fontSize: '16px' }} /><Star style={{ color: "#FF9F0D", fontSize: '16px' }} /><Star style={{ color: "#E0E0E0", fontSize: '16px' }} /><Star style={{ color: "#E0E0E0", fontSize: '16px' }} /></p>
@@ -316,7 +320,7 @@ const ProductListing = () => {
                         </div>
 
                         {/* Product Tags */}
-                        <div className="mt-10 w-[70%]">
+                        < div className="mt-10 w-[70%]" >
                             <h3 className="font-semibold mb-4">Product Tags</h3>
                             <div className="flex flex-wrap gap-2">
                                 <button className="px-3 py-1 border-b hover:text-[#FF9F0D] border-b-gray-300 rounded">
@@ -347,7 +351,7 @@ const ProductListing = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
             <div className='bg-[#0D0D0D]'>
                 <CTA2 />
                 <Footer />

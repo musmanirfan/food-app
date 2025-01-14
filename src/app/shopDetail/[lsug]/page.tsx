@@ -57,7 +57,7 @@ export default function Page() {
     return (
         <>
             <InnerPagesHeader />
-            <InnerPageBanner currentPage={"Our Shop"} previousPage={"Blog"} />
+            <InnerPageBanner currentPage={"Our Shop"} previousPage={"Home"} />
             <div className="sm:px-[100px] px-4 flex flex-col lg:flex-row gap-5 mt-10">
                 {/* Left Section - Image Grid */}
                 <div className="flex flex-col sm:flex-row lg:flex-nowrap gap-3">

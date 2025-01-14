@@ -105,7 +105,7 @@ const SignUp = () => {
                         {/* Submit Button */}
                         <button
                             type="submit"
-                            className="w-full py-3 bg-[#FF9F0D] text-white hover:bg-orange-600 transition focus:outline-none focus:ring-2 focus:ring-[#FF9F0D] rounded-lg text-lg font-semibold"
+                            className="w-full py-3 bg-[#FF9F0D] text-white hover:bg-white hover:border-2 hover:border-[#FF9F0D] hover:text-[#FF9F0D] transition focus:outline-none focus:ring-2 focus:ring-[#FF9F0D] rounded-lg text-lg font-semibold"
                         >
                             Send Message
                         </button>
