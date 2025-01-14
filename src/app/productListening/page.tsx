@@ -1,7 +1,6 @@
 "use client";
 
 import { KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight, Star } from "@mui/icons-material";
-import Image from "next/image";
 import React from "react";
 import CTA2 from "../components/CTA2";
 import Footer from "../components/Footer";
